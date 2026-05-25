@@ -1,99 +1,188 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background: linear-gradient(40deg, #389cffcb, #acd1ffd8, #ecf1ff);
-    min-height: 100vh;
-    font-family: sans-serif, 'Poppins';
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background: linear-gradient(40deg, #389cffcb, #acd1ffd8, #ecf1ff);
+  min-height: 100vh;
+  font-family: sans-serif, "Poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.345);
-    border-radius: 8px;
-    height: 400px;
-    width: 600px;
-    flex-direction: column;
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.345);
+  border-radius: 12px;
+  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: rgb(0, 45, 129);
+  margin: 20px 0;
+  text-align: center;
+}
+
+#Task {
+  border: 2px solid gray;
+  height: 35px;
+  width: 70%;
+  margin: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#Task:active {
+  border: 2px solid #2e2e2e;
+}
+
+li {
+  cursor: pointer;
+}
+
+.addTask {
+  height: 40px;
+  width: 150px;
+  border-radius: 8px;
+  border: 2px solid #001289;
+  color: #001289;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.3s;
+  margin: 15px;
+}
+
+.addTask:hover {
+  transform: scale(1.03);
+  opacity: 0.7;
+}
+
+.addTask:active {
+  transform: scale(0.9);
+}
+
+#taskList {
+  height: 50%;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+ul {
+  /* scrollbar */
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+
+  background-color: rgb(224, 224, 224);
+  border-radius: 10px;
+  padding: 0 15px;
+}
+
+@media (max-width: 500px) {
+  html {
+    min-width: 100vw;
+  }
+
+  .container {
+    min-width: 400px;
+    width: 90%;
     background-color: #fff;
-}
+    padding: 25px;
+  }
 
-.inner-container{
+  .inner-container {
+    flex-direction: column;
+  }
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  #Task {
     display: flex;
-    justify-content: center;
-}
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 90%;
+  }
 
-h1{
-    color: rgb(0, 45, 129);
-    margin: 20px 0;
-}
-
-#Task{
-    border: 2px solid gray;
-    height: 35px;
-    width: 70%;
-    margin: 15px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-#Task:active{
-    border: 2px solid #2e2e2e;
-}
-
-li{
-    cursor: pointer;
-}
-
-.addTask{
-    height: 40px;
-    width: 150px;
-    border-radius: 8px;
-    border: 2px solid #001289;
-    color: #001289;
-    font-size: 16px;
-    font-weight: 700;
-    transition: 0.3s;
-    margin: 15px;
-}
-
-.addTask:hover{
-    transform: scale(1.03);
-    opacity: 0.7;
-}
-
-.addTask:active{
-    transform: scale(0.9);
-}
-
-#taskList{
-    height: 150px;
-    width: 500px;
+  #taskList {
+    height: 30%;
+    width: 90%;
     margin: 20px auto;
-}
+  }
 
-.completed{
-    text-decoration: line-through;
-    opacity: 0.6;
+  input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
+  }
 
-ul{
-    /* scrollbar */
-    list-style: none;
-    max-height: 200px;
-    overflow-y: auto;
-    
-    background-color: rgb(224, 224, 224);
-    border-radius: 10px;
-    padding: 0 15px;
+  h1 {
+    font-size: 24px;
+  }
+
+  li {
+    text-align: center;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .addTask {
+    width: 90%;
+  }
 }
