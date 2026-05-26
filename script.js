@@ -24,6 +24,11 @@ addBtn.addEventListener("click",()=>{
     li.textContent = task;
     delBtn.textContent = "Delete";
     delBtn.classList.add("addTask");
+    delBtn.style.width = "80px";
+    delBtn.style.height = "30px";
+    delBtn.style.color = "white";
+    delBtn.style.backgroundColor = "#0080ff";
+    delBtn.style.border = "none";
 
     li.appendChild(delBtn);
     taskList.appendChild(li);
