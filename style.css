@@ -121,12 +121,11 @@ ul {
 
 @media (max-width: 500px) {
   html {
-    min-width: 100vw;
+    width: 100%;
   }
 
   .container {
-    min-width: 400px;
-    width: 90%;
+    width: 100%;
     background-color: #fff;
     padding: 25px;
   }
