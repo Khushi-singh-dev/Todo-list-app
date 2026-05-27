@@ -1,17 +1,48 @@
+:root{
+  --bg-color: #55a1ffb8;
+  --text-color: #0051ff;
+  --card-color: white;
+  --btn-color: #dcdcff;
+  --btn-text: #050065;
+  --btn-border: #050065;
+  --transparency: #cfcfcf8d;
+  --h1-color: #0051ff;
+  --inp-border: #808080;
+  --scroller: #54545483;
+}
+
+.dark-mode{
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #292929c6;
+  --btn-color: #121127;
+  --btn-border: #404040;
+  --btn-text: #dcdcff;
+  --transparency: #0000008f;
+  --h1-color: #c2d5ff;
+  --inp-border: #414141;
+  --scroller: #616161b3;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition:
+  background 0.3s,
+  color 0.3s;
 }
 
 body {
-  background: linear-gradient(40deg, #389cffcb, #acd1ffd8, #ecf1ff);
+  background: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   font-family: sans-serif, "Poppins";
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  transition: 0.3s;
 }
 
 nav {
@@ -42,7 +73,8 @@ nav {
   height: 400px;
   width: 100%;
   max-width: 400px;
-  background-color: #fff;
+  background: var(--card-color);
+  transition: 0.3s;
 }
 
 .inner-container {
@@ -51,16 +83,18 @@ nav {
 }
 
 h1 {
-  color: rgb(0, 115, 255);
+  color: var(--h1-color);
   margin: 20px 0;
   text-align: center;
 }
 
 #Task {
-  border: 2px solid gray;
-  height: 35px;
-  width: 70%;
-  margin: 15px;
+  border: 2px solid var(--inp-border);
+  height: 40px;
+  width: 90%;
+  background: var(--card-color);
+  color: var(--text-color);
+  margin: 15px 0 15px 15px;
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 18px;
@@ -73,14 +107,18 @@ h1 {
 
 li {
   cursor: pointer;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 15px;
 }
 
 .addTask {
   height: 40px;
-  width: 150px;
+  width: 80%;
   border-radius: 8px;
-  border: 2px solid #001289;
-  color: #001289;
+  border: 2px solid var(--btn-border);
+  color: var(--btn-text);
+  background: var(--btn-color);
   font-size: 16px;
   font-weight: 700;
   transition: 0.3s;
@@ -102,6 +140,15 @@ li {
   margin: 20px auto;
 }
 
+  #themeToggle{
+    background: var(--transparency);
+    position: fixed;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+  }
+
 .completed {
   text-decoration: line-through;
   opacity: 0.6;
@@ -114,9 +161,45 @@ ul {
   max-height: 200px;
   overflow-y: auto;
 
-  background-color: rgb(224, 224, 224);
+  background-color: var(--transparency);
   border-radius: 10px;
   padding: 0 15px;
+}
+
+/* scrollbar width */
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+
+
+/* scrollbar track */
+
+::-webkit-scrollbar-track{
+
+    background: rgba(166, 166, 166, 0.235);
+
+    border-radius: 10px;
+}
+
+
+
+/* scrollbar thumb */
+
+::-webkit-scrollbar-thumb{
+    background: var(--scroller);
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+/* hover effect */
+
+::-webkit-scrollbar-thumb:hover{
+
+    background: var(--scroller);
 }
 
 @media (max-width: 500px) {
@@ -126,7 +209,8 @@ ul {
 
   .container {
     width: 100%;
-    background-color: #fff;
+    height: 100%;
+    background-color: var(--card-color);
     padding: 25px;
   }
 
@@ -153,7 +237,7 @@ ul {
     height: 30%;
     padding: 10px;
     width: 90%;
-    margin: 20px auto;
+    margin: 20px 8px auto 20px;
   }
 
   input {
@@ -164,7 +248,7 @@ ul {
   }
 
   button {
-    padding: 10px 20px;
+    padding: 8px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

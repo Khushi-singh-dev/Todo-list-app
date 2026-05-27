@@ -26,7 +26,9 @@ Click the image below to view the full screenshot:
 
 # ✨ Features
 
-✅ Add new tasks  
+✅ Add new tasks 
+✅ Edit task feature 
+✅ Light/Dark mode  
 ✅ Delete tasks  
 ✅ Mark tasks as completed  
 ✅ Press Enter key to add tasks  
@@ -110,11 +112,9 @@ The app is optimized for:
 
 # 🎯 Future Improvements
 
-🔹 Edit task feature  
 🔹 Data persistence with Local Storage  
 🔹 Dynamic task counter  
-🔹 Delete all tasks button  
-🔹 Dark mode  
+🔹 Delete all tasks button   
 🔹 Drag and drop tasks  
 🔹 Task categories  
 🔹 Due dates & reminders  
